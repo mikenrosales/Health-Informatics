@@ -1,10 +1,10 @@
 body {
-    background-color: #f8f9fa; /* Light gray background */
-    color: #333; /* Dark gray text */
+    background-color: #f8f9fa;
+    color: #333;
   }
   
   .container {
-    max-width: 1000px; /* Limit container width for better readability */
+    max-width: 1000px;
   }
   
   .story-box-selection {
@@ -12,8 +12,8 @@ body {
     padding: 5px;
     margin: 10px 0;
     border-radius: 5px;
-    background-color: #fff; /* White background */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and scale */
+    background-color: #fff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
   }
 
   .story-box-selection h5 {
@@ -21,8 +21,8 @@ body {
   }
   
   .story-box-selection:hover {
-    background-color: #f1f1f1; /* Lighter background on hover */
-    cursor: pointer; /* Change cursor on hover for better UX */
+    background-color: #f1f1f1;
+    cursor: pointer;
   }
   
   .story-box {
@@ -39,8 +39,12 @@ body {
   }
   
   .story-box p {
-    font-size: larger;
+    font-size: large;
     margin-bottom: 10px;
+  }
+
+  .title {
+    color: #333;
   }
   
   .story-box img {
@@ -49,8 +53,88 @@ body {
   }
 
   .story-box-selection.selected {
-    background-color: #f1f1f1; /* Lighter background when selected */
+    background-color: #f1f1f1;
 }
+
+/* Dialogs */
+.comic-bubble {
+  position: relative;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  max-width: 80%;
+  display: inline-block;
+  font-size: larger;
+  box-shadow: 3px 3px 0 #000;
+}
+
+.comic-bubble::after, .comic-bubble::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: solid transparent;
+  pointer-events: none;
+}
+
+.comic-bubble-left::after, .comic-bubble-left::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left: 0;
+}
+
+.comic-bubble-right::after, .comic-bubble-right::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right: 0;
+}
+
+.comic-bubble-left::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 10px;
+  border: 10px solid transparent;
+  border-right-color: #333;
+  transform: rotate(45deg);
+}
+
+.comic-bubble-right::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  right: 10px;
+  border: 10px solid transparent;
+  border-left-color: #333;
+  transform: rotate(-45deg);
+}
+/* End Dialogs */
+
+/* Scroll to top */
+#scrollToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+  transition: opacity 0.3s;
+}
+
+#scrollToTopBtn:hover {
+  background-color: #777;
+}
+/* End scroll to top */
 
 .fade-in .story-box { animation: fadeIn 1s; }
 
